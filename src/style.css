@@ -29,7 +29,8 @@ img{
  }
 /* style */
 body{
-    background-color: #eee;
+    background-image: url('./image/backgroundimage.jpeg');
+    background-size: cover;
 }
 
 @media(min-width:500px){

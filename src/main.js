@@ -81,15 +81,18 @@ $(".addButton").on("click", () => {
       localStorage.setItem('x',string)
   }
 
+  $('.searchForm > input')
+    .on('keypress',(e) => {
+      e.stopPropagation()
+    })
+
   $(document).on('keypress',(e)=>{
         const {key} = e //等价 const key = e.key
-        const p = document.activeElement
-        const input = document.querySelector('.input')
-        if(p !== input){
+        // const p = document.activeElement
+        // if(document.activeElement !== document.querySelector('.input')){
         for(let i = 0;i < hashMap.length;i++){
         if(hashMap[i].logo.toLowerCase() === key){
                     window.open(hashMap[i].url)
-        }
         }
     }
     })

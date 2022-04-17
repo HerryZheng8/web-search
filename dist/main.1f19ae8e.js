@@ -193,17 +193,17 @@ window.onbeforeunload = function () {
   localStorage.setItem('x', string);
 };
 
+$('.searchForm > input').on('keypress', function (e) {
+  e.stopPropagation();
+});
 $(document).on('keypress', function (e) {
   var key = e.key; //等价 const key = e.key
+  // const p = document.activeElement
+  // if(document.activeElement !== document.querySelector('.input')){
 
-  var p = document.activeElement;
-  var input = document.querySelector('.input');
-
-  if (p !== input) {
-    for (var i = 0; i < hashMap.length; i++) {
-      if (hashMap[i].logo.toLowerCase() === key) {
-        window.open(hashMap[i].url);
-      }
+  for (var i = 0; i < hashMap.length; i++) {
+    if (hashMap[i].logo.toLowerCase() === key) {
+      window.open(hashMap[i].url);
     }
   }
 });
@@ -235,7 +235,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52799" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59232" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
